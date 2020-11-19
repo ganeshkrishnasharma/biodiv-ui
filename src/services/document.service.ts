@@ -204,3 +204,15 @@ export const axDownloadDocument = async (documentPath, documentId) => {
     return { success: false, data: null };
   }
 };
+
+export const axGetListData = async (params, index = "document", type = "document_records") => {
+  try {
+    const { data } = await plainHttp.get(`${ENDPOINT.DOCUMENT}/v1/services/list/${index}/${type}`, {
+      params
+    });
+
+    return { success: true, data };
+  } catch (e) {
+    return { success: false, data: {} };
+  }
+};
