@@ -61,7 +61,7 @@ export default function FilterCheckboxes({
       )}
       <CheckboxGroup defaultValue={defaultValue} onChange={handleOnChange}>
         {filteredOptions.map(({ label, value, stat, valueIcon }) => (
-          <Checkbox key={label} value={value} onChange={handleOnChange} alignItems="baseline">
+          <Checkbox key={label} value={value} alignItems="baseline">
             {valueIcon && (
               <Image
                 src={getTraitIcon(valueIcon, 20)}

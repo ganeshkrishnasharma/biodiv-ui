@@ -3,10 +3,9 @@ import { getLocalIcon } from "@utils/media";
 import React, { useMemo } from "react";
 
 export default function FilterIconList({ filterIds, filterList, title, type, icon }) {
-  const filters: any[] = useMemo(
-    () => filterList.filter((item) => filterIds.includes(item.id)),
-    []
-  );
+  const filters: any[] = useMemo(() => filterList.filter((item) => filterIds.includes(item.id)), [
+    filterIds
+  ]);
 
   return (
     <Box ml={2}>

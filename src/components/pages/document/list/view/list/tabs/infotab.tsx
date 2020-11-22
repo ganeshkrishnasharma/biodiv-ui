@@ -89,7 +89,7 @@ export default function InfoTab({ document, habitatIds, specieIds, flags, user }
 
         <Flex justifyContent="space-between" alignItems="center">
           <Stack isInline spacing={5} align="center">
-            {habitatIds[0] !== null && habitats && (
+            {habitatIds.length > 0 && habitats && (
               <FilterIconsList
                 title={t("GROUP.HABITATS_COVERED")}
                 type="habitat"
@@ -98,7 +98,7 @@ export default function InfoTab({ document, habitatIds, specieIds, flags, user }
                 filterList={habitats}
               />
             )}
-            {habitatIds[0] !== null && species && (
+            {specieIds.length > 0 && species && (
               <FilterIconsList
                 title={t("GROUP.SPECIES_COVERAGE")}
                 type="species"
